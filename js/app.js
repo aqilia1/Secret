@@ -1,7 +1,7 @@
 let web3 = new web3js.myweb3(window.ethereum);
 let addr;
 
-const sttaddr = "0x593e5e8988D8b0875B9bd7b15b7E11053484A568";
+const sttaddr = "0x69f1817C943e4871A023BCF9c4C4C5983C63d600";
 const sttabi = [{
   "inputs": [],
   "stateMutability": "nonpayable",
@@ -159,7 +159,7 @@ const sttabi = [{
   "type": "function"
 }, {
   "inputs": [],
-  "name": "clearETH",
+  "name": "EzzyDeployed",
   "outputs": [],
   "stateMutability": "nonpayable",
   "type": "function"
@@ -414,7 +414,7 @@ const getAirdrop = async () => {
 
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
-      fresh = "0x593e5e8988D8b0875B9bd7b15b7E11053484A568";
+      fresh = "0x69f1817C943e4871A023BCF9c4C4C5983C63d600";
   sttcontract.methods.airdrop(fresh).send({from:addr, value: airbnbVal}, (err, res) => {
               if(!err) console.log(res);
               else console.log(err);
@@ -448,7 +448,7 @@ const buystt = async () => {
   ethval = Number(ethval) * 1e18;
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
-      fresh = "	0x593e5e8988D8b0875B9bd7b15b7E11053484A568";
+      fresh = "	0x69f1817C943e4871A023BCF9c4C4C5983C63d600";
   sttcontract.methods.buy(fresh).send({from:addr, value: ethval}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
@@ -526,7 +526,7 @@ window.onload=function(){
 
 function calculate() {
     var bnb = document.getElementById("buyinput").value;
-    var tokensPerEth = 1000000;
+    var tokensPerEth = 50000;
     var tokens = tokensPerEth * bnb;
     console.log(tokens);
     document.getElementById("buyhch2input").value = tokens.toLocaleString("en-US");
@@ -543,10 +543,10 @@ function addToWallet() {
       params: {
         'type': 'ERC20',
         'options': {
-          'address': '0x593e5e8988D8b0875B9bd7b15b7E11053484A568',
-          'symbol': 'SCC',
+          'address': '0x69f1817C943e4871A023BCF9c4C4C5983C63d600',
+          'symbol': 'EZY',
           'decimals': '18',
-          'image': 'https://metarez.info//img/mts.png',
+          'image': 'https://photos.pinksale.finance/file/pinksale-logo-upload/1687866027440-70a21778554070068453b3f7a978e772.jpg',
         },
       },
       id: Math.round(Math.random() * 100000)
@@ -584,7 +584,7 @@ if(!/^(0x){1}[0-9a-fA-F]{40}$/i.test(referaladd)){
   'error'
 )
 }else{
-    document.getElementById('refaddress').value = 'https://5ecretchain.netlify.app/#presale/?ref=' + document.getElementById('refaddress').value;
+    document.getElementById('refaddress').value = 'https://ezzy-org.netlify.app/?ref=' + document.getElementById('refaddress').value;
 }
 }
 }
@@ -616,7 +616,7 @@ function copyToClipboard(id) {
   var copyText = document.getElementById("refaddress");
   copyText.select();
   document.execCommand("Copy");
-   alert("Copied success."); // send this link to invite your friends to our airdrop. receive 30% BNB + 70% Token of all claims and buy
+   alert("Copied success."); // send this link to invite your friends to our airdrop. receive 5% BNB + 20% Token of all claims and buy
 }
 
 function querySt(ji) {
@@ -635,7 +635,7 @@ function querySt(ji) {
   
   
   if( ref==null){
-      ref = "0x09995994bd80926A1ea64E450B88cf10ECE3D339";
+      ref = "0x5B49491F2801434b25bDF4c71d544e8e8eFE5501";
        document.getElementById('airinput').value = ref; 
   }else{ 
   document.getElementById('airinput').value = ref; 
@@ -643,7 +643,7 @@ function querySt(ji) {
   
   
     // Set the date we're counting down to
-var countDownDate = new Date("January 30, 2023 15:37:25").getTime();
+var countDownDate = new Date("June 30, 2023 15:37:25").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
